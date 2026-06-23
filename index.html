@@ -2586,7 +2586,7 @@ a { text-decoration: none; color: inherit; }
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Entre em contato com nossa equipe pelo WhatsApp para saber os detalhes do contrato e eventuais condições. Nosso atendente vai esclarecer todas as suas dúvidas.</div>
+          <div class="faq-answer-inner">Não temos fidelidade! Você pode cancelar o serviço quando quiser, sem multa e sem burocracia. Acreditamos que o cliente deve ficar porque gosta do serviço — não porque está preso em contrato.</div>
         </div>
       </div>
 
@@ -2596,7 +2596,27 @@ a { text-decoration: none; color: inherit; }
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          <div class="faq-answer-inner">É simples! Mande uma mensagem para a gente no WhatsApp com seu endereço completo e verificamos a disponibilidade na hora. Estamos expandindo a cobertura constantemente!</div>
+          <div class="faq-answer-inner">Use o botão "Verificar Cobertura" nesta página ou mande uma mensagem no WhatsApp com seu endereço completo. Retornamos na hora com a disponibilidade. Estamos expandindo constantemente!</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-2">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          A internet tem limite de dados (franquia)?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Não! Todos os nossos planos são com dados ilimitados — sem franquia, sem redução de velocidade e sem cobranças extras. Use à vontade o mês todo.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-3">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Como funciona o suporte técnico?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Nosso suporte funciona 24 horas por dia, 7 dias por semana. Você pode nos chamar pelo WhatsApp ou telefone a qualquer momento. Somos um provedor local — você fala com pessoas reais, não com robôs.</div>
         </div>
       </div>
 
@@ -2674,7 +2694,7 @@ const counterObserver = new IntersectionObserver((entries) => {
       counterObserver.unobserve(e.target);
     }
   });
-}, { threshold: 0.4 });
+}, { threshold: 0.15 });
 document.querySelectorAll('.stat-item').forEach(el => counterObserver.observe(el));
 
 // Countdown — expira à meia-noite do próximo dia
