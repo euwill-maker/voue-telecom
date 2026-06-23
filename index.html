@@ -231,7 +231,7 @@ a { text-decoration: none; color: inherit; }
   width: auto;
   display: block;
   transition: transform 0.3s;
-  filter: drop-shadow(0 2px 8px rgba(75,197,165,0.3));
+  mix-blend-mode: screen;
 }
 
 .nav-logo:hover .nav-logo-img {
@@ -1955,7 +1955,7 @@ a { text-decoration: none; color: inherit; }
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; margin-bottom: 2px;
 }
-.via-bot-ava img { width: 17px; height: auto; }
+.via-bot-ava img { width: 17px; height: auto; mix-blend-mode: screen; }
 .via-bubble {
   max-width: 76%;
   padding: 10px 14px;
@@ -2138,7 +2138,7 @@ a { text-decoration: none; color: inherit; }
       <img src="logo.png" alt="Voue Telecom" class="nav-logo-img">
     </a>
     <div style="display:flex; align-items:center; gap:10px;">
-      <a href="#" class="nav-central" title="Central do Assinante">
+      <a href="https://central.vouetelecom.com.br/central_assinante_web/login" target="_blank" class="nav-central" title="Central do Assinante">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         <span>Minha Conta</span>
       </a>
@@ -2607,7 +2607,7 @@ a { text-decoration: none; color: inherit; }
 <!-- ── FOOTER ── -->
 <footer class="footer">
   <div class="container">
-    <img src="logo.png" alt="Voue Telecom" style="height:80px; width:auto; margin-bottom:12px; filter: drop-shadow(0 2px 12px rgba(75,197,165,0.25));">
+    <img src="logo.png" alt="Voue Telecom" style="height:80px; width:auto; margin-bottom:12px; mix-blend-mode: screen;">
     <div class="footer-tagline">Conexão não é promessa, é compromisso.</div>
     <div class="footer-divider"></div>
     <div class="footer-info">WhatsApp: <a href="https://wa.me/5547992004480" target="_blank">(47) 99200-4480</a></div>
