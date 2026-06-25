@@ -1424,7 +1424,7 @@ a { text-decoration: none; color: inherit; }
 /* ── RESPONSIVE ── */
 /* ── WIFI SECTION ── */
 .wifi-section {
-  background: var(--gray-bg);
+  background: #dce8f8;
   padding: 88px 0;
   overflow: hidden;
 }
@@ -1443,10 +1443,10 @@ a { text-decoration: none; color: inherit; }
 .wifi-img-wrap {
   position: relative;
   border-radius: 24px;
-  overflow: hidden;
-  background: linear-gradient(145deg, #0A1E3D, #1565C0);
-  padding: 40px;
-  box-shadow: 0 24px 64px rgba(10,30,61,0.2);
+  overflow: visible;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
 }
 
 .wifi-img {
@@ -1454,22 +1454,62 @@ a { text-decoration: none; color: inherit; }
   display: block;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 8px 32px rgba(30,136,229,0.5));
-  transition: transform 0.5s ease;
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 8px 32px rgba(30,136,229,0.4));
+  animation: routerFloat 5s ease-in-out infinite;
+  transition: filter 0.5s ease;
 }
 
 .wifi-img-wrap:hover .wifi-img {
-  transform: scale(1.04) translateY(-4px);
+  filter: drop-shadow(0 14px 44px rgba(19,86,168,0.5));
+}
+
+@keyframes routerFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
 }
 
 .wifi-glow {
   position: absolute;
   bottom: 0; left: 50%;
   transform: translateX(-50%);
-  width: 70%; height: 40%;
-  background: radial-gradient(ellipse, rgba(75,197,165,0.35) 0%, transparent 70%);
+  width: 80%; height: 50%;
+  background: radial-gradient(ellipse, rgba(75,197,165,0.4) 0%, transparent 70%);
   pointer-events: none;
   z-index: 1;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.2); }
+}
+
+/* Ondas de Wi-Fi expandindo */
+.wifi-rings {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.wifi-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid rgba(75, 197, 165, 0.7);
+  transform: translate(-50%, -50%);
+  animation: ringExpand 3.6s ease-out infinite;
+}
+
+.wifi-ring:nth-child(1) { animation-delay: 0s; }
+.wifi-ring:nth-child(2) { animation-delay: 1.2s; }
+.wifi-ring:nth-child(3) { animation-delay: 2.4s; }
+
+@keyframes ringExpand {
+  0%   { width: 20px;  height: 20px;  opacity: 0.9; border-color: rgba(75,197,165,0.8); }
+  70%  { opacity: 0.3; }
+  100% { width: 280px; height: 280px; opacity: 0;   border-color: rgba(30,136,229,0); }
 }
 
 .wifi-signal {
@@ -1484,16 +1524,17 @@ a { text-decoration: none; color: inherit; }
 .wifi-signal span {
   background: #4BC5A5;
   border-radius: 2px;
-  animation: signalPulse 1.5s ease-in-out infinite;
+  animation: signalWave 1.8s ease-in-out infinite;
+  transform-origin: bottom;
 }
 
 .wifi-signal span:nth-child(1) { width: 5px; height: 10px; animation-delay: 0s; }
-.wifi-signal span:nth-child(2) { width: 5px; height: 16px; animation-delay: 0.2s; }
-.wifi-signal span:nth-child(3) { width: 5px; height: 22px; animation-delay: 0.4s; }
+.wifi-signal span:nth-child(2) { width: 5px; height: 16px; animation-delay: 0.25s; }
+.wifi-signal span:nth-child(3) { width: 5px; height: 22px; animation-delay: 0.5s; }
 
-@keyframes signalPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+@keyframes signalWave {
+  0%, 100% { opacity: 1;   transform: scaleY(1); }
+  50%       { opacity: 0.2; transform: scaleY(0.5); }
 }
 
 .wifi-content { flex: 1; }
@@ -2366,6 +2407,11 @@ a { text-decoration: none; color: inherit; }
         <div class="wifi-img-wrap">
           <img src="router.jpg" alt="Roteador Voue Telecom" class="wifi-img" loading="lazy">
           <div class="wifi-glow"></div>
+          <div class="wifi-rings">
+            <div class="wifi-ring"></div>
+            <div class="wifi-ring"></div>
+            <div class="wifi-ring"></div>
+          </div>
           <div class="wifi-signal">
             <span></span><span></span><span></span>
           </div>
